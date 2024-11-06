@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  rancher:
+    image: rancher/rancher:latest
+    restart: always
+    privileged: true
+    ports:
+    - "80:80/tcp"
+    - "443:443/tcp"
+    volumes:
+    - "rancher:/var/lib/rancher"
+
+volumes:
+  rancher:
